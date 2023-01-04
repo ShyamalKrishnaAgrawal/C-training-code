@@ -11,5 +11,6 @@ int main()
     char c='A';
     char * pc=&c;
     printf("%p,%p,%p\n",&age,&d,&c);
-    printf("%p,%p,%p",page,pd,pc);
+    printf("%p,%p,%p\n",page,pd,pc);
+    printf("%d,%f,%c",page,pd,pc);
 }
