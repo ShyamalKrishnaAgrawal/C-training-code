@@ -9,5 +9,7 @@ int main()
     printf("\n");
     printf("%f",pow(2,5));
     printf("%f",sqrt(16));
+    printf("%f",ceil(3.3));
+    printf("%f",floor(3.8));
     return 0;
 }
