@@ -89,6 +89,9 @@ struct Node* delete (struct Node* head){
         if(head->id == in_id){
             head->next=NULL;
         }
+        else{
+            printf("id not present")
+        }
     }
 
     return (*store_head);
@@ -120,7 +123,7 @@ struct Node* print123 (struct Node* head){
     struct Node** store_head = &head;
     
     while(head!= NULL){
-        printf("id= %d, name= %s, price= %d",head->id,head->name,head->price);
+        printf("\n id= %d, name= %s, price= %d \n",head->id,head->name,head->price);
         head=head->next;
     }
 
@@ -160,16 +163,16 @@ int main() {
         if(ask == 1) {
             item = insert(item);
         }
-        else if(ask == 2){
+        else if(ask == 2) {
             item = delete(item);
         }
-        else if(ask == 3){
+        else if(ask == 3) {
             item = update(item);
         }
-        else if(ask==4){
+        else if(ask == 4) {
             search(item);
         }
-        else if(ask==5){
+        else if(ask == 5) {
             FILE* fpointer1=fopen("list of mob.txt","w");
             while(item != NULL){
                 fprintf(fpointer1,"%d, %s, %d\n",item->id,item->name,item->price);
@@ -178,10 +181,13 @@ int main() {
             fclose(fpointer1);
             break;
         }
-        else{
+        else {
             printf("invalid");
         }
+
+        // print complete list
         print123(item);
+        
         // Ask user for data.
         printf(" Want to insert then input : 1 \n Want to delete then input : 2 \n Want to update 3 \n Want to search 4 \n Want to save 5 \n input= ");
         scanf("%d",&ask);
